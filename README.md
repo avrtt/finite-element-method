@@ -4,7 +4,8 @@
 ## Contents
 1. [Problem Formulation](https://github.com/lenferdetroud/finite-element-method#problem-formulation)
 2. [Introduction to Finite Element Method](https://github.com/lenferdetroud/finite-element-method#introduction-to-finite-element-method)
-3. [Plan](https://github.com/lenferdetroud/finite-element-method#plan)
+3. [Theory](https://github.com/lenferdetroud/finite-element-method#theory)
+4. [Outline](https://github.com/lenferdetroud/finite-element-method#outline)
     * [Understanding the Problem](https://github.com/lenferdetroud/finite-element-method#understanding-the-problem)
     * [Galerkin Method](https://github.com/lenferdetroud/finite-element-method#galerkin-method)
     * [Basis Functions](https://github.com/lenferdetroud/finite-element-method#basis-functions)
@@ -13,10 +14,10 @@
     * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
     * [Assembling the Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
     * [Boundary Conditions](https://github.com/lenferdetroud/finite-element-method#boundary-conditions)
-4. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
-5. [Testing](https://github.com/lenferdetroud/finite-element-method#testing)
-6. [Research](https://github.com/lenferdetroud/finite-element-method#research)
-7. [Results](https://github.com/lenferdetroud/finite-element-method#results)
+5. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
+6. [Testing](https://github.com/lenferdetroud/finite-element-method#testing)
+7. [Research](https://github.com/lenferdetroud/finite-element-method#research)
+8. [Results](https://github.com/lenferdetroud/finite-element-method#results)
 
 ## Problem Formulation
 Implement finite element method for two-dimensional boundary value problem for elliptic equation in Cartesian coordinate system with bilinear basis functions on rectangles and boundary conditions of all types. Decompose the diffusion coefficient by biquadratic basis functions and generate the matrix of the system of linear algebraic equations in sparse string format. To solve the system of linear algebraic equations use the method of conjugate gradients or local-optimal scheme with incomplete factorization.
