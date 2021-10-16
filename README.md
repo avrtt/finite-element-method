@@ -12,7 +12,7 @@
     * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
     * [Stiffness and Mass Matrices](https://github.com/lenferdetroud/finite-element-method#stiffness-and-mass-matrices)
     * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
-    * [Assembling the Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
+    * [Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
     * [Boundary Conditions](https://github.com/lenferdetroud/finite-element-method#boundary-conditions)
 5. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
 6. [Testing](https://github.com/lenferdetroud/finite-element-method#testing)
@@ -38,7 +38,7 @@ The following description gives a superficial overview of the problem. A more de
 ...
 #### Visualization
 ...
-#### Assembling the Global Matrix
+#### Global Matrix
 ...
 #### Boundary Conditions 
 ...
