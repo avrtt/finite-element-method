@@ -1,5 +1,4 @@
-## General Introduction
-This is my coursework on numerical methods, which triggered this music in my head when I first read it:
+## General Introduction to My Coursework
 <a href="https://www.youtube.com/watch?v=nxXcuDAv7Ss&t=107s"><img src="https://github.com/lenferdetroud/misc/blob/master/university/vordt_of_the_boreal_valley.png" alt="Vordt of the Boreal Valley" width="450"/></a>  
 
 ## Contents
