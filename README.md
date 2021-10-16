@@ -24,7 +24,8 @@ Implement finite element method for two-dimensional boundary value problem for e
 ...
 ## Plan
 #### Understanding the Problem
-...
+Equation of the elliptic boundary value problem:
+[1.svg](https://github.com/lenferdetroud/misc/blob/master/finite-element-method/1.svg)
 #### Galerkin Method
 ...
 #### Basis Functions 
