@@ -22,8 +22,9 @@
 Implement finite element method for two-dimensional boundary value problem for elliptic equation in Cartesian coordinate system with bilinear basis functions on rectangles and boundary conditions of all types. Decompose the diffusion coefficient by biquadratic basis functions and generate the matrix of the system of linear algebraic equations in sparse string format. To solve the system of linear algebraic equations use the method of conjugate gradients or local-optimal scheme with incomplete factorization.
 ## Introduction to Finite Element Method
 ...
+## Theory
+The following description gives a superficial overview of the problem. A more detailed explanation can be found in the [theory.pdf](https://github.com/lenferdetroud/finite-element-method/tree/main/theory.pdf) file, which was compiled after studying various sources.
 ## Outline
-A more detailed explanation can be found in the [theory.pdf](https://github.com/lenferdetroud/finite-element-method/tree/main/theory.pdf), which was compiled after studying various sources.
 #### Understanding the Problem
 ...
 #### Galerkin Method
