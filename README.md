@@ -1,3 +1,7 @@
+## General Introduction
+This is my coursework on numerical methods, which has its own soundtrack:
+<a href="https://www.youtube.com/watch?v=nxXcuDAv7Ss&t=107s"><img src="https://github.com/lenferdetroud/misc/blob/master/university/vordt_of_the_boreal_valley.png" alt="Vordt of the Boreal Valley" width="450"/></a>  
+
 ## Contents
 1. [Problem Formulation](https://github.com/lenferdetroud/finite-element-method#problem-formulation)
 2. [Introduction to Finite Element Method](https://github.com/lenferdetroud/finite-element-method#introduction-to-finite-element-method)
