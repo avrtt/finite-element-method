@@ -14,13 +14,14 @@
     * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
     * [Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
     * [Boundary Conditions](https://github.com/lenferdetroud/finite-element-method#boundary-conditions)
+    * [Solving the System of Linear Equations](https://github.com/lenferdetroud/finite-element-method#solving-the-system-of-linear-equations)
 5. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
 6. [Testing](https://github.com/lenferdetroud/finite-element-method#testing)
 7. [Research](https://github.com/lenferdetroud/finite-element-method#research)
 8. [Results](https://github.com/lenferdetroud/finite-element-method#results)
 
 ## Problem Formulation
-Implement finite element method for two-dimensional boundary value problem for elliptic equation in Cartesian coordinate system with bilinear basis functions on rectangles and boundary conditions of all types. Decompose the diffusion coefficient by biquadratic basis functions and generate the matrix of the system of linear algebraic equations in sparse string format. To solve the system of linear algebraic equations use the method of conjugate gradients or local-optimal scheme with incomplete factorization.
+Implement finite element method for two-dimensional boundary value problem for elliptic equation in Cartesian coordinate system with bilinear basis functions on rectangles and boundary conditions of all types. Decompose the diffusion coefficient by biquadratic basis functions and generate the matrix of the system of linear equations in sparse string format. To solve the system of linear equations use the method of conjugate gradients or local-optimal scheme with incomplete factorization.
 ## Introduction to Finite Element Method
 ...
 ## Theory
@@ -41,6 +42,8 @@ The following description gives a superficial overview of the problem. A more de
 #### Global Matrix
 ...
 #### Boundary Conditions 
+...
+#### Solving the System of Linear Equations
 ...
 ## Implementation
 - [io.cpp](https://github.com/lenferdetroud/finite-element-method/blob/main/io.cpp) - ...  
