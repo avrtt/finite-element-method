@@ -7,6 +7,7 @@
 3. [Outline](https://github.com/lenferdetroud/finite-element-method#outline)
     * [Understanding the Problem](https://github.com/lenferdetroud/finite-element-method#understanding-the-problem)
     * [Introduction to Finite Element Method](https://github.com/lenferdetroud/finite-element-method#introduction-to-finite-element-method)
+    * [Turning Continuous into Discrete](https://github.com/lenferdetroud/finite-element-method#turning-continuous-into-discrete)
     * [Galerkin Method](https://github.com/lenferdetroud/finite-element-method#galerkin-method)
     * [Basis Functions](https://github.com/lenferdetroud/finite-element-method#basis-functions)
     * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
@@ -28,6 +29,8 @@ The following description gives a superficial overview of the problem. A more de
 #### Understanding the Problem
 ...
 #### Introduction to Finite Element Method
+...
+#### Turning Continuous into Discrete
 ...
 #### Galerkin Method
 ...
