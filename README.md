@@ -6,14 +6,14 @@
 2. [Theory](https://github.com/lenferdetroud/finite-element-method#theory)
 3. [Outline](https://github.com/lenferdetroud/finite-element-method#outline)
     * [Understanding the Problem](https://github.com/lenferdetroud/finite-element-method#understanding-the-problem)
+    * [Variational Formulation](https://github.com/lenferdetroud/finite-element-method#variational-formulation)
     * [Introduction to Finite Element Method](https://github.com/lenferdetroud/finite-element-method#introduction-to-finite-element-method)
-    * [Turning Continuous into Discrete](https://github.com/lenferdetroud/finite-element-method#turning-continuous-into-discrete)
-    * [Galerkin Method](https://github.com/lenferdetroud/finite-element-method#galerkin-method)
+    * [Galerkin Equation](https://github.com/lenferdetroud/finite-element-method#galerkin-equation)
     * [Basis Functions](https://github.com/lenferdetroud/finite-element-method#basis-functions)
-    * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
     * [Stiffness and Mass Matrices](https://github.com/lenferdetroud/finite-element-method#stiffness-and-mass-matrices)
-    * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
+    * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
     * [Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
+    * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
     * [Boundary Conditions](https://github.com/lenferdetroud/finite-element-method#boundary-conditions)
     * [Solving the System of Linear Equations](https://github.com/lenferdetroud/finite-element-method#solving-the-system-of-linear-equations)
 4. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
@@ -28,21 +28,21 @@ The following description gives a superficial overview of the problem. A more de
 ## Outline
 #### Understanding the Problem
 ...
+#### Variational Formulation
+...
 #### Introduction to Finite Element Method
 ...
-#### Turning Continuous into Discrete
-...
-#### Galerkin Method
+#### Galerkin Equation
 ...
 #### Basis Functions 
 ...
-#### Local Matrices
-...
 #### Stiffness and Mass Matrices
 ...
-#### Visualization
+#### Local Matrices
 ...
 #### Global Matrix
+...
+#### Visualization
 ...
 #### Boundary Conditions 
 ...
