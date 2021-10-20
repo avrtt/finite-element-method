@@ -10,7 +10,6 @@
     * [Introduction to Finite Element Method](https://github.com/lenferdetroud/finite-element-method#introduction-to-finite-element-method)
     * [Galerkin Equation](https://github.com/lenferdetroud/finite-element-method#galerkin-equation)
     * [Basis Functions](https://github.com/lenferdetroud/finite-element-method#basis-functions)
-    * [Stiffness and Mass Matrices](https://github.com/lenferdetroud/finite-element-method#stiffness-and-mass-matrices)
     * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
     * [Area and Mesh](https://github.com/lenferdetroud/finite-element-method#area-and-mesh)
     * [Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
@@ -35,8 +34,6 @@ The following description gives a superficial overview of the problem. A more de
 #### Galerkin Equation
 ...
 #### Basis Functions 
-...
-#### Stiffness and Mass Matrices
 ...
 #### Local Matrices
 ...
