@@ -12,8 +12,8 @@
     * [Basis Functions](https://github.com/lenferdetroud/finite-element-method#basis-functions)
     * [Stiffness and Mass Matrices](https://github.com/lenferdetroud/finite-element-method#stiffness-and-mass-matrices)
     * [Local Matrices](https://github.com/lenferdetroud/finite-element-method#local-matrices)
+    * [Area and Mesh](https://github.com/lenferdetroud/finite-element-method#area-and-mesh)
     * [Global Matrix](https://github.com/lenferdetroud/finite-element-method#assembling-the-global-matrix)
-    * [Visualization](https://github.com/lenferdetroud/finite-element-method#visualization)
     * [Boundary Conditions](https://github.com/lenferdetroud/finite-element-method#boundary-conditions)
     * [Solving the System of Linear Equations](https://github.com/lenferdetroud/finite-element-method#solving-the-system-of-linear-equations)
 4. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
@@ -40,9 +40,9 @@ The following description gives a superficial overview of the problem. A more de
 ...
 #### Local Matrices
 ...
-#### Global Matrix
+#### Area and Mesh
 ...
-#### Visualization
+#### Global Matrix
 ...
 #### Boundary Conditions 
 ...
