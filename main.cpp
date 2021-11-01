@@ -6,15 +6,15 @@
 int nX, nY;
 int N; // matrix dimension
 int i, k, istep = 0; // counters
-int* ig, * jg; // portrait and positions of matrix elements
+int *ig, *jg; // portrait and positions of matrix elements
 real eps; // accuracy 
-real* gridX, * gridY; // x-axis and y-axis grids
-real* global; // memory location pointer
-real* ggl, * ggu; // lower and upper triangles of the original matrix
-real* L, * U; // lower and upper triangles of the conditional matrix
-real* di, * diag; // diagonals of original and conditional matrices
-real* x, * f; // solution vector and right side vector
-real* r, * p, * z, * q, * s, * sout; // auxiliary vectors
+real *gridX, *gridY; // x-axis and y-axis grids
+real *global; // memory location pointer
+real *ggl, *ggu; // lower and upper triangles of the original matrix
+real *L, *U; // lower and upper triangles of the conditional matrix
+real *di, *diag; // diagonals of original and conditional matrices
+real *x, *f; // solution vector and right side vector
+real *r, *p, *z, *q, *s, *sout; // auxiliary vectors
 
 int main()
 {
