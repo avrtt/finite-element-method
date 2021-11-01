@@ -1,20 +1,22 @@
 ﻿#include <fstream>
+#include <iostream>
 #include "math.h"
 #include "common.h"
 #define MEM 100000 // memory capacity
 
-int nX, nY;
+int nX, nY; //
 int N; // matrix dimension
-int i, k, istep = 0; // counters
-int *ig, *jg; // portrait and positions of matrix elements
+int i, j, k, l, find, factRet, iter, stop, istep = 0; // counters and flags
+int *port, *pos; // portrait and positions of matrix elements
 real eps; // accuracy 
+real result = 0.0; // dot product result
 real *gridX, *gridY; // x-axis and y-axis grids
 real *global; // memory location pointer
-real *ggl, *ggu; // lower and upper triangles of the original matrix
+real *Lo, *Uo; // lower and upper triangles of the original matrix
 real *L, *U; // lower and upper triangles of the conditional matrix
-real *di, *diag; // diagonals of original and conditional matrices
+real *diOrig, *diCond; // diagonals of original and conditional matrices
 real *x, *f; // solution vector and right side vector
-real *r, *p, *z, *q, *s, *sout; // auxiliary vectors
+real *sout, *s, *r, *p, *z, *q; // auxiliary vectors
 
 int main()
 {
@@ -23,7 +25,9 @@ int main()
     config(); // configuration of pointers and memory allocation
     //globalAsm(); // assembling the global matrix
     // ...
-    //factorization(); // perform LU decomposition
+    factRet = factorization(); // perform LU decomposition
+    std::cout << factRet; // удалить
+    // здесь проверка корректности факторизации
     //lowerGauss(); // solving the lower triangle
     //upperGauss(); // solving the upper triangle
     //makeResult(); // ...
@@ -58,12 +62,12 @@ void config()
     global = new double[MEM]; // allocation
     memset(global, 0, MEM * sizeof(double)); // nullification
 
-    ig = (int*)global;
-    jg = (int*)(global + N + 1);
+    port = (int*)global;
+    pos = (int*)(global + N + 1);
 
     for (i = 0; i < N + 1; i++) // generating the number of matrix elements
     {
-        ig[i] = istep;
+        port[i] = istep;
         istep += i;
     }
 
@@ -71,25 +75,83 @@ void config()
     for (i = 0; i < N; i++) // generating matrix element positions
         for (k = 0; k < i; k++)
         {
-            jg[istep] = k;
+            pos[istep] = k;
             istep++;
         }
 
-    ggl = global + N + 1 + ig[N];
-    ggu = global + 2 * (ig[N]) + N + 1;
-    di = global + 3 * (ig[N]) + N + 1;
-    f = di + N;
+    diCond = q + N;
+    diOrig = global + 3 * (port[N]) + N + 1;
+    L = diCond + N;
+    U = L + port[N];
+    Lo = global + N + 1 + port[N];
+    Uo = global + 2 * (port[N]) + N + 1;
+    x = U + port[N];
+    f = diOrig + N
+    s = x + N;
+    sout = s + N;
     r = f + N;
     z = r + N;
     p = z + N;
     q = p + N;
-    diag = q + N;
-    L = diag + N;
-    U = L + ig[N];
-    x = U + ig[N];
-    s = x + N;
-    sout = s + N;
     gridX = sout + N;
     gridY = gridX + nX;
+}
+
+int factorization()
+{
+    for (i = 0; i < N; i++)
+    {
+        for (j = port[i]; j < port[i + 1]; j++)
+        {
+            L[j] = (Lo[j] - dotProduct(i, pos[j]));
+            U[j] = (Uo[j] - dotProduct(pos[j], i)) / diCond[pos[j]];
+        }
+        diCond[i] = diOrig[i] - dotProduct(i, i);
+    }
+    return 0;
+}
+
+real dotProduct(int i, int j) // scalar product (for factorization only)
+{
+    if (i == j)
+    {
+        for (k = port[i]; k < port[i + 1]; k++)
+            result += U[k] * L[k];
+    }
+    else
+    {
+        if (i > j) // upper triangle
+        {
+            for (k = port[j]; k < port[j + 1]; k++)
+            {
+                find = 0;
+                for (l = port[i]; l < port[i + 1] && find == 0; l++)
+                {
+                    if (pos[l] == pos[k])
+                    {
+                        result += U[k] * L[l];
+                        find = 1;
+                    }
+                }
+            }
+        }
+        else // lower triangle
+        {
+            for (l = port[i]; l < port[i + 1]; l++)
+            {
+                find = 0;
+                for (k = port[j]; k < port[j + 1] && find == 0; k++)
+                {
+                    if (pos[l] == pos[k])
+                    {
+                        result += U[k] * L[l];
+                        find = 1;
+                    }
+                }
+            }
+        }
+
+    }
+    return result;
 }
 
