@@ -57,7 +57,7 @@ real multVect(real *vect1, real *vect2) // scalar multiplication of two vectors
     return result;
 }
 
-void multMatVect(real *in, real *out) // matrix-vector product
+void multMatVect(real *in, real *out) // matrix-vector multiplication
 {
     int i, j;
     real *outNew = new real[N];
