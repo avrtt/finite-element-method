@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="io.cpp" />
+    <ClCompile Include="linear_algebra.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="parameters.cpp" />
+    <ClCompile Include="solve.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
