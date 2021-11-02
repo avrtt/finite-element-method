@@ -5,13 +5,15 @@ void readSize() // reading area size
 {
     std::ifstream input("size.txt");
     input >> nX >> nY;
-    N = nX * nY;
     input.close();
+
+    N = nX * nY;
 }
 
 void readGrid() // reading gridX and gridY
 {
     int i;
+
     std::ifstream inputX("gridX.txt");
     for (i = 0; i < nX; i++)
         inputX >> gridX[i];
