@@ -181,7 +181,7 @@ A module containing functions to read input data and build a table with the resu
 A header file containing preprocessor directives, function declarations and global variables common to all modules.
 - [size.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/size.txt)   
 This file specifies the number of nodes on the x-axis and the number of nodes on the y-axis, separated by a space.
-- [nodeX.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/nodeX.txt), [nodeY.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/nodeY.txt)  
+- [nodesX.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/nodesX.txt), [nodesY.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/nodesY.txt)  
 Files containing node coordinates in the X and Y axes, respectively.
 - [edgeTypes.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/edgeTypes.txt)   
 A file containing four space-separated values (1/2/3) describing the type of condition on the boundaries of an area. The first value corresponds to the lower boundary, the second to the right, the third to the top, and the fourth to the left.
