@@ -139,19 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="boundaries.cpp" />
     <ClCompile Include="io.cpp" />
-    <ClCompile Include="linear_algebra.cpp" />
+    <ClCompile Include="math.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="parameters.cpp" />
-    <ClCompile Include="solve.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="gauss.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="gridX.txt" />
-    <Text Include="gridY.txt" />
-    <Text Include="parameters.txt" />
+    <Text Include="edgeTypes.txt" />
+    <Text Include="nodesX.txt" />
+    <Text Include="nodesY.txt" />
+    <Text Include="size.txt" />
     <Text Include="result.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

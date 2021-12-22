@@ -21,13 +21,16 @@
     <ClCompile Include="io.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="linear_algebra.cpp">
+    <ClCompile Include="math.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="parameters.cpp">
+    <ClCompile Include="config.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="solve.cpp">
+    <ClCompile Include="gauss.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="boundaries.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -37,16 +40,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="gridX.txt">
+    <Text Include="nodesX.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
-    <Text Include="gridY.txt">
+    <Text Include="nodesY.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
-    <Text Include="parameters.txt">
+    <Text Include="size.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
     <Text Include="result.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="edgeTypes.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
   </ItemGroup>

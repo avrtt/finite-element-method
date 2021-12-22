@@ -1,30 +1,43 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-typedef double real;
+#include <fstream>
+#include <iostream>
 
 extern int nX, nY, N; 
-extern int *port, *pos;
-extern real *gridX, *gridY;
-extern real *L, *U, *Lo, *Uo; 
-extern real *diCond, *diOrig;
+extern int numIter, i, k, step;
+extern int *ig, *jg;
+extern double *x, *f;
+extern double *gridX, *gridY;
+extern double *edges;
+extern double *L, *U, *ggl, *ggu; 
+extern double *di, *diOrig;
+extern double *r, *p, *z, *q;
+extern double eps;
 
 void readSize();
 void readGrid();
 void config();
-real analytical(real, real);
-real getF(real, real);
-real getLambda(real, real);
-real getGamma(real, real);
-//void globalAsm();
-//void boundaryCond();
-real dotProduct(int i, int j);
-int factorization();
-void addGlobal(int, int, real);
-void lowerGauss(real *in, real *out);
-void upperGauss(real *in, real *out);
-void multMatVect(real *in, real *out);
-real multVect(real *v1, real *v2);
-//void result();
+void buildPortrait();
+void readEdges();
+double getAnalytical(double, double);
+double getF(double, double);
+double getLambda(double, double);
+double getGamma(double, double);
+void globalAsm();
+void boundaryCond();
+void firstCond(int);
+void secondCond(int);
+void thirdCond(int);
+double getBeta();
+double sum(int i, int j);
+void factorization();
+void addGlobal(double, int, int);
+void forwardGauss(double *in, double *out);
+void backwardGauss(double *in, double *out);
+void multVectByA(double *in, double *out);
+double multVectByVect(double *v1, double *v2);
+void los();
+void printResult();
 
 #endif
