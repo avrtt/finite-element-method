@@ -2,12 +2,12 @@
 #include "common.h"
 
 #define MEM 100000 // memory capacity
-int numIter = 100; // maximum number of LOS iterations 
+int numIter = 1000; // maximum number of LOS iterations 
 double eps = 1e-30; // solution accuracy of LOS
 
 double getAnalytical(double x, double y)
 {
-    return x * x + y * y
+    return pow(x, 2) + pow(y, 2)
 ;}
 
 double getF(double x, double y)

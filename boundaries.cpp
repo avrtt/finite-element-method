@@ -23,33 +23,24 @@ void boundaryCond()
 
 void firstCond(int edgeNum)
 {
-    if (edgeNum == 0)
-        for (i = 0; i < nX; i++)
-        {
-            diOrig[i] = 1.0e+100;
-            f[i] = 1.0e+100 * getAnalytical(gridX[i], gridY[0]);
-        }
+    switch(edgeNum)
+    {
+        case 0: for (i = 0; i < nX; i++)
+                    diOrig[i] = 1.0e+100, f[i] = 1.0e+100 * getAnalytical(gridX[i], gridY[0]);
+                break;
 
-    if (edgeNum == 1)
-        for (i = 0; i < nY; i++)
-        {
-            diOrig[nX * (i + 1) - 1] = 1.0e+100;
-            f[nX * (i + 1) - 1] = 1.0e+100 * getAnalytical(gridX[nX - 1], gridY[i]);
-        }
+        case 1: for (i = 0; i < nY; i++)
+                    diOrig[nX * (i + 1) - 1] = 1.0e+100, f[nX * (i + 1) - 1] = 1.0e+100 * getAnalytical(gridX[nX - 1], gridY[i]);
+                break;
 
-    if (edgeNum == 2)
-        for (i = 0; i < nX; i++)
-        {
-            diOrig[nX * (nY - 1) + i] = 1.0e+100;
-            f[nX * (nY - 1) + i] = 1.0e+100 * getAnalytical(gridX[i], gridY[nY - 1]);
-        }
+        case 2: for (i = 0; i < nX; i++)
+                    diOrig[nX * (nY - 1) + i] = 1.0e+100, f[nX * (nY - 1) + i] = 1.0e+100 * getAnalytical(gridX[i], gridY[nY - 1]);
+                break;
 
-    if (edgeNum == 3)
-        for (i = 0; i < nY; i++)
-        {
-            diOrig[nX * (i + 1) - 3] = 1.0e+100;
-            f[nX * (i + 1) - 3] = 1.0e+100 * getAnalytical(gridX[0], gridY[i]);
-        }
+        case 3: for (i = 0; i < nY; i++)
+                    diOrig[nX * i] = 1.0e+100, f[nX * i] = 1.0e+100 * getAnalytical(gridX[0], gridY[i]); 
+                break;
+    }
 }
 
 void secondCond(int edgeNum)
@@ -59,32 +50,23 @@ void secondCond(int edgeNum)
     double theta1 = 0, theta2 = 0;
     double h = 0;
 
-    if (edgeNum == 0)
+    switch(edgeNum)
     {
-        edgeNode1 = 0, edgeNode2 = nX - 1;
-        h = gridX[nX - 1] - gridX[0];
-        theta1 = getAnalytical(gridX[0], gridY[0]), theta2 = getAnalytical(gridX[nX - 1], gridY[0]);
-    }
+        case 0: edgeNode1 = 0, edgeNode2 = nX - 1, h = gridX[nX - 1] - gridX[0];
+                theta1 = - getLambda(gridX[0], gridY[0]), theta2 = - getLambda(gridX[nX - 1], gridY[0]);
+                break;
 
-    if (edgeNum == 1)
-    {
-        edgeNode1 = nX - 1, edgeNode2 = nX * nY - 1;
-        h = gridY[nY - 1] - gridY[0];
-        theta1 = getAnalytical(gridX[nX - 1], gridY[0]), theta2 = getAnalytical(gridX[nX - 1], gridY[nY - 1]);
-    }
+        case 1: edgeNode1 = nX - 1, edgeNode2 = nX * nY - 1, h = gridY[nY - 1] - gridY[0];
+                theta1 = getLambda(gridX[nX - 1], gridY[0]), theta2 = getLambda(gridX[nX - 1], gridY[nY - 1]);
+                break;
 
-    if (edgeNum == 2)
-    {
-        edgeNode1 = nX * (nY - 1), edgeNode2 = nX * (nY - 1) + nX - 1;
-        h = gridX[nX - 1] - gridX[0];
-        theta1 = getAnalytical(gridX[0], gridY[nY - 1]), theta2 = getAnalytical(gridX[nX - 1], gridY[nY - 1]);
-    }
+        case 2: edgeNode1 = nX * (nY - 1), edgeNode2 = nX * (nY - 1) + nX - 1, h = gridX[nX - 1] - gridX[0];
+                theta1 = getLambda(gridX[0], gridY[nY - 1]), theta2 = getLambda(gridX[nX - 1], gridY[nY - 1]);
+                break;
 
-    if (edgeNum == 3)
-    {
-        edgeNode1 = 0, edgeNode2 = nX * (nY - 1);
-        h = gridY[nY - 1] - gridY[0];
-        theta1 = getAnalytical(gridX[0], gridY[0]), theta2 = getAnalytical(gridX[0], gridY[nY - 1]);
+        case 3: edgeNode1 = 0, edgeNode2 = nX * (nY - 1), h = gridY[nY - 1] - gridY[0];
+                theta1 = - getLambda(gridX[0], gridY[0]), theta2 = - getLambda(gridX[0], gridY[nY - 1]);
+                break;
     }
 
     b[0] = (h / 6) * (2 * theta1 + theta2);
@@ -101,32 +83,27 @@ void thirdCond(int edgeNum)
     double uBeta1 = 0, uBeta2 = 0;
     double h = 0;
 
-    if (edgeNum == 0)
+    switch(edgeNum)
     {
-        edgeNode1 = 0, edgeNode2 = nX - 1;
-        h = gridX[nX - 1] - gridX[0];
-        uBeta1 = getAnalytical(gridX[0], gridY[0]), uBeta2 = getAnalytical(gridX[nX - 1], gridY[0]);
-    }
+        case 0: edgeNode1 = 0, edgeNode2 = nX - 1, h = gridX[nX - 1] - gridX[0];
+                uBeta1 = - getLambda(gridX[0], gridY[0]) + getBeta() * getAnalytical(gridX[0], gridY[0]);
+                uBeta2 = - getLambda(gridX[nX - 1], gridY[0]) + getBeta() * getAnalytical(gridX[nX - 1], gridY[0]);
+                break;
 
-    if (edgeNum == 1)
-    {
-        edgeNode1 = nX - 1, edgeNode2 = nX * nY - 1;
-        h = gridY[nY - 1] - gridY[0];
-        uBeta1 = getAnalytical(gridX[nX - 1], gridY[0]), uBeta2 = getAnalytical(gridX[nX - 1], gridY[nY - 1]);
-    }
+        case 1: edgeNode1 = nX - 1, edgeNode2 = nX * nY - 1, h = gridY[nY - 1] - gridY[0];
+                uBeta1 = getLambda(gridX[nX - 1], gridY[0]) + getBeta() * getAnalytical(gridX[nX - 1], gridY[0]);
+                uBeta2 = getLambda(gridX[nX - 1], gridY[nY - 1]) + getBeta() * getAnalytical(gridX[nX - 1], gridY[nY - 1]);
+                break;
 
-    if (edgeNum == 2)
-    {
-        edgeNode1 = nX * (nY - 1), edgeNode2 = nX * (nY - 1) + nX - 1;
-        h = gridX[nX - 1] - gridX[0];
-        uBeta1 = getAnalytical(gridX[0], gridY[nY - 1]), uBeta2 = getAnalytical(gridX[nX - 1], gridY[nY - 1]);
-    }
+        case 2: edgeNode1 = nX * (nY - 1), edgeNode2 = nX * (nY - 1) + nX - 1, h = gridX[nX - 1] - gridX[0];
+                uBeta1 = getLambda(gridX[0], gridY[nY - 1]) + getBeta() * getAnalytical(gridX[0], gridY[nY - 1]);
+                uBeta2 = getLambda(gridX[nX - 1], gridY[nY - 1]) + getBeta() * getAnalytical(gridX[nX - 1], gridY[nY - 1]);
+                break;
 
-    if (edgeNum == 3)
-    {
-        edgeNode1 = 0, edgeNode2 = nX * (nY - 1);
-        h = gridY[nY - 1] - gridY[0];
-        uBeta1 = getAnalytical(gridX[0], gridY[0]), uBeta2 = getAnalytical(gridX[0], gridY[nY - 1]);
+        case 3: edgeNode1 = 0, edgeNode2 = nX * (nY - 1), h = gridY[nY - 1] - gridY[0];
+                uBeta1 = - getLambda(gridX[0], gridY[0]) + getBeta() * getAnalytical(gridX[0], gridY[0]);
+                uBeta2 = - getLambda(gridX[0], gridY[nY - 1]) + getBeta() * getAnalytical(gridX[0], gridY[nY - 1]); 
+                break;
     }
 
     b[0] = getBeta() * (h / 6) * (2 * uBeta1 + uBeta2);
@@ -134,7 +111,7 @@ void thirdCond(int edgeNum)
 
     f[edgeNode1] += b[0];
     f[edgeNode2] += b[1];
-
+    
     A[0][0] = getBeta() * h / 3, A[0][1] = getBeta() * h / 6;
     A[1][0] = getBeta() * h / 6, A[1][1] = getBeta() * h / 3;
 

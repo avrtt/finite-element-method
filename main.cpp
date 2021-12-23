@@ -68,6 +68,7 @@ void globalAsm() // building local matrices and assembling the global matrix
             G[3][0] = el4, G[3][1] = el3, G[3][2] = el2, G[3][3] = el1; 
 
             /*
+            
             lambda1 = getLambda(xPoint, yPoint);
             lambda2 = getLambda(xPoint + hx / 2.0, yPoint);
             lambda3 = getLambda(xPoint + hx, yPoint);
@@ -80,21 +81,10 @@ void globalAsm() // building local matrices and assembling the global matrix
             gamma = getGamma(xPoint + hx / 2.0, yPoint + hy / 2.0);
 
             G[0][0] = lambda1 * ... + lambda2 * ... + ...;
-            G[1][0] = el2;
-            G[2][0] = el3;
-            G[3][0] = el4;
-            G[0][1] = el2;
-            G[1][1] = el1;
-            G[2][1] = el4;
-            G[3][1] = el3;
-            G[0][2] = el3;
-            G[1][2] = el4;
-            G[2][2] = el1;
-            G[3][2] = el2;
-            G[0][3] = el4;
-            G[1][3] = el3;
-            G[2][3] = el2;
-            G[3][3] = el1; */
+            G[1][0] = lambda1 * ... + lambda2 * ... + ...;
+            ... 
+            
+            */
 
             el1 = hx * hy / 9.0;
             el2 = hx * hy / 18.0;

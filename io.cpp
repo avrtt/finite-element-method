@@ -47,8 +47,8 @@ void printResult()
     output << setprecision(DIG) << setw(DIG + 10)
         << "Numerical" << setw(DIG + 20)
         << "Analytical" << setw(DIG + 20)
-        << "Error" << setw(DIG + 15)
-        << "(x, y)\n"
+        << "Error" << setw(DIG + 17)
+        << "x     y\n"
     << endl;
 
     for (k = 0; k < nY; k++)
@@ -64,7 +64,7 @@ void printResult()
                 << setw(DIG + 20) << analytical
                 << setw(DIG + 20) << error
                 << setw(DIG + 10) << xPoint
-                << setw(3) << yPoint
+                << setw(6) << yPoint
             << endl;
 
             tmpNormErr += error * error;
@@ -75,7 +75,7 @@ void printResult()
 
     relNorm = sqrt(tmpNormErr / tmpNormAn);
 
-    output << setprecision(DIG) << "\n" << setw(DIG + 43) <<
+    output << setprecision(5) << "\n" << setw(DIG + 43) <<
         "||u - u*|| / ||u*|| = " << relNorm
     << endl;
 
