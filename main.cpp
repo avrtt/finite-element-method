@@ -3,7 +3,7 @@
 int nX, nY; // number of x-axis and y-axis elements
 int N; // linear system dimension
 int i, k, n, m, step = 0, flag = 0; // counters and flags
-int *ig, *jg; // line beginning indexes and positions of matrix elements
+int *ig, *jg; // portrait
 double *gridX, *gridY; // x-axis and y-axis grids
 double *edges; // types of boundary conditions on four sides
 double *ggl, *ggu; // lower and upper triangles of the global matrix
@@ -50,8 +50,10 @@ void globalAsm() // building local matrices and assembling the global matrix
             hx = xUpperPoint - xPoint;
             hy = yUpperPoint - yPoint;
 
-            lambda = getLambda(xPoint + hx / 2.0, yPoint + hy / 2.0);
-            gamma = getGamma(xPoint + hx / 2.0, yPoint + hy / 2.0);
+            node[0] = nX * k + i;
+            node[1] = nX * k + i + 1;
+            node[2] = nX * (k + 1) + i;
+            node[3] = nX * (k + 1) + i + 1;
 
             hx_2 = hx * hx;
             hy_2 = hy * hy;
@@ -105,11 +107,6 @@ void globalAsm() // building local matrices and assembling the global matrix
             b[2] = C[2][0] * fl[0] + C[2][1] * fl[1] + C[2][2] * fl[2] + C[2][3] * fl[3];
             b[3] = C[3][0] * fl[0] + C[3][1] * fl[1] + C[3][2] * fl[2] + C[3][3] * fl[3];
 
-            node[0] = nX * k + i;
-            node[1] = nX * k + i + 1;
-            node[2] = nX * (k + 1) + i;
-            node[3] = nX * (k + 1) + i + 1;
-
             // adding elements to the global matrix
             for (n = 0; n < 4; n++)
             {
@@ -117,7 +114,9 @@ void globalAsm() // building local matrices and assembling the global matrix
 
                 for (m = 0; m < 4; m++)
                 {
-                    A[n][m] = lambda * G[n][m] + gamma * C[n][m]; // building a local matrix
+                    A[n][m] = getLambda(xPoint + hx / 2.0, yPoint + hy / 2.0) * G[n][m] + // building a local matrix
+                              getGamma(xPoint + hx / 2.0, yPoint + hy / 2.0) * C[n][m];
+
                     addGlobal(A[n][m], node[n], node[m]); // adding to the global matrix
                 }
             }

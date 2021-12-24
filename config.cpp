@@ -7,12 +7,12 @@ double eps = 1e-30; // solution accuracy of LOS
 
 double getAnalytical(double x, double y)
 {
-    return pow(x, 2) + pow(y, 2)
+    return pow(x, 4) + pow(y, 4)
 ;}
 
 double getF(double x, double y)
 {
-    return - 4
+    return - 12 * x * x - 12 * y * y 
 ;}
 
 double getLambda(double x, double y)
@@ -58,9 +58,9 @@ void config()
 
     buildPortrait();
 
-    ggl = BUF + N + ig[N] + 1;
-    ggu = BUF + N + 2 * ig[N] + 1;
-    diOrig = BUF + N + 3 * ig[N] + 1;
+    ggl = BUF + N + ig[N];
+    ggu = ggl + N + ig[N];
+    diOrig = ggu + N + ig[N];
 
     r = diOrig + N;
     z = r + N;
