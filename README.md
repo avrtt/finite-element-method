@@ -17,8 +17,7 @@ The FEM is a numerical method that solves [boundary value problems](https://en.w
     * [LU Decomposition and Gaussian Elimination](https://github.com/lenferdetroud/finite-element-method#lu-decomposition-and-gaussian-elimination)
     * [Local Optimal Scheme](https://github.com/lenferdetroud/finite-element-method#local-optimal-scheme)
 2. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
-3. [Testing and Research](https://github.com/lenferdetroud/finite-element-method#testing-and-research)
-4. [Install](https://github.com/lenferdetroud/finite-element-method#install)
+3. [Install](https://github.com/lenferdetroud/finite-element-method#install)
 
 
 ## Outline
@@ -31,7 +30,7 @@ This equation is set in some area **Ω** with boundary  <img src="https://github
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/12.png" width="60%">  
   
 Our goal is to find **u = u(x, y)** (i.e., its numerical approximation).
-First, we choose a random (trial) function that satisfies the boundary conditions and replace the function **u(x, y)** in the differential equation with it. Second, we calculate the [error](https://en.wikipedia.org/wiki/Residual_(numerical_analysis)) (the difference between the chosen and theoretical functions). Finally, we minimize the error.
+The first step is to find an arbitrary trial function which satisfies the given boundary conditions. Substituting it into the equation, we will calculate the [residual](https://en.wikipedia.org/wiki/Residual_(numerical_analysis)) (the difference between the chosen and theoretical functions) to estimate the accuracy of the approximation. Next, we need to find such a function among some set of functions that approximates the **u** in the best way, i.e. solve the problem of minimization of a [functional](https://en.wikipedia.org/wiki/Functional_(mathematics)). 
 
 ### Galerkin Method
 The best method for minimizing the error in our case is the [Galerkin method](https://en.wikipedia.org/wiki/Galerkin_method), which can be described by this equation:  
@@ -48,11 +47,11 @@ The integral on the boundary **S** is divided into three boundaries (**S1**, **S
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/45.png" width="40%">  
 And then:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/20.png" width="85%">   
-This is where the division into finite elements begins. We can now represent the function **u** as a decomposition of the functions **ψ** with weights **q**:  
+This is where the division into finite elements begins. We can now represent the function **u** as a decomposition of the basis functions **ψ** with weights **q**:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/21.png" width="15%">   
-The final equation is:  
+Now the approximation of the function **u** will be performed by docked local basis functions on finite elements, and the solution of the problem is a vector of weights (**q1**, **q2**, ... **qn**), which can be obtained by solving a system of linear equations.  
+Let's substitute the decomposition of the function **u** into the Galerkin equation and obtain the final expression for the linear system with boundary conditions:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/42.png" width="100%">  
-The functions **Ψ** are called **basis functions**; they will approximate the function **u**. As a result of summing over all of them, we obtain a system of linear algebraic equations, the unknown values of which are weights **q**. Thus, our goal now is to find the vector **q**.   
 
 ### Basis Functions 
 We will represent the finite elements as **rectangles**, and as functions **Ψ** we will take **bilinear functions**. The area will be divided into subareas corresponding to each finite element:  
@@ -185,9 +184,6 @@ This file specifies the number of nodes on the x-axis and the number of nodes on
 Files containing node coordinates in the X and Y axes, respectively.
 - [edgeTypes.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/edgeTypes.txt)   
 A file containing four space-separated values (1/2/3) describing the type of condition on the boundaries of an area. The first value corresponds to the lower boundary, the second to the right, the third to the top, and the fourth to the left.
-
-## Testing and Research
-You can find all the tests in the file [tests.pdf](https://github.com/lenferdetroud/finite-element-method/blob/main/tests.pdf).
 
 ## Install
 Since this is a Windows console application, you can simply clone the repository directly into your Visual Studio environment or use `git clone https://github.com/lenferdetroud/finite-element-method.git`. The application has no interface.  
