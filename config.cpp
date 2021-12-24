@@ -1,7 +1,7 @@
 #include "math.h"
 #include "common.h"
 
-#define MEM 100000 // memory capacity
+#define MEM 1000000 // memory capacity
 int numIter = 1000; // maximum number of LOS iterations 
 double eps = 1e-30; // solution accuracy of LOS
 
@@ -12,7 +12,7 @@ double getAnalytical(double x, double y)
 
 double getF(double x, double y)
 {
-    return x * x + y * y - 3
+    return - 4
 ;}
 
 double getLambda(double x, double y)
@@ -22,7 +22,7 @@ double getLambda(double x, double y)
 
 double getGamma(double x, double y)
 {
-    return 1
+    return 0
 ;}
 
 double getBeta()

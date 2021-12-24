@@ -13,7 +13,6 @@ double *x, *f; // solution vector and right side vector
 double *r, *p, *z, *q; // auxiliary vectors for LOS
 double alpha, beta, breakValue; // LOS coefficients and exit value
 double xPoint, yPoint, xUpperPoint, yUpperPoint, hx, hy; // finite element parameters
-//double lambda1, lambda2, lambda3, lambda4, lambda5, lambda6, lambda7, lambda8, lambda9, gamma; // area parameters
 double lambda, gamma; // area parameters
 double temp, hx_2, hy_2, el1, el2, el3, el4; // variables for elements of G and C
 
@@ -80,8 +79,8 @@ void globalAsm() // building local matrices and assembling the global matrix
             lambda9 = getLambda(xPoint + hx, yPoint + hy);
             gamma = getGamma(xPoint + hx / 2.0, yPoint + hy / 2.0);
 
-            G[0][0] = lambda1 * ... + lambda2 * ... + ...;
-            G[1][0] = lambda1 * ... + lambda2 * ... + ...;
+            G[0][0] = lambda1 * ... + ... + lambda9 * ...;
+            G[1][0] = lambda1 * ... + ... +  lambda9 * ...;
             ... 
             
             */
@@ -119,7 +118,6 @@ void globalAsm() // building local matrices and assembling the global matrix
                 for (m = 0; m < 4; m++)
                 {
                     A[n][m] = lambda * G[n][m] + gamma * C[n][m]; // building a local matrix
-                    //A[n][m] = G[n][m] + gamma * C[n][m]; // building a local matrix
                     addGlobal(A[n][m], node[n], node[m]); // adding to the global matrix
                 }
             }
