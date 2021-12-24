@@ -48,11 +48,11 @@ The integral on the boundary **S** is divided into three boundaries (**S1**, **S
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/45.png" width="40%">  
 And then:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/20.png" width="85%">   
-This is where the division into finite elements begins. We can now represent the function **u** as a decomposition of the functions **ψ** with weights **q**:  
+This is where the division into finite elements begins. We can now represent the function **u** as a decomposition of the basis functions **ψ** with weights **q**:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/21.png" width="15%">   
-The final equation is:  
+Now the approximation of the function **u** will be performed by docked local basis functions on finite elements, and the solution of the problem is a vector of weights (**q1**, **q2**, ... **qn**), which can be obtained by solving a system of linear equations.  
+Let's substitute the decomposition of the function **u** into the Galerkin equation and obtain the final expression for the linear system with boundary conditions:  
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/42.png" width="100%">  
-The functions **Ψ** are called **basis functions**; they will approximate the function **u**. As a result of summing over all of them, we obtain a system of linear algebraic equations, the unknown values of which are weights **q**. Thus, our goal now is to find the vector **q**.   
 
 ### Basis Functions 
 We will represent the finite elements as **rectangles**, and as functions **Ψ** we will take **bilinear functions**. The area will be divided into subareas corresponding to each finite element:  
