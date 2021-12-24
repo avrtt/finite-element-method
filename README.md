@@ -17,7 +17,8 @@ The FEM is a numerical method that solves [boundary value problems](https://en.w
     * [LU Decomposition and Gaussian Elimination](https://github.com/lenferdetroud/finite-element-method#lu-decomposition-and-gaussian-elimination)
     * [Local Optimal Scheme](https://github.com/lenferdetroud/finite-element-method#local-optimal-scheme)
 2. [Implementation](https://github.com/lenferdetroud/finite-element-method#implementation)
-3. [Install](https://github.com/lenferdetroud/finite-element-method#install)
+3. [Tests](https://github.com/lenferdetroud/finite-element-method#tests)
+4. [Install](https://github.com/lenferdetroud/finite-element-method#install)
 
 
 ## Outline
@@ -184,6 +185,9 @@ This file specifies the number of nodes on the x-axis and the number of nodes on
 Files containing node coordinates in the X and Y axes, respectively.
 - [edgeTypes.txt](https://github.com/lenferdetroud/finite-element-method/blob/main/edgeTypes.txt)   
 A file containing four space-separated values (1/2/3) describing the type of condition on the boundaries of an area. The first value corresponds to the lower boundary, the second to the right, the third to the top, and the fourth to the left.
+
+## Tests
+You can find all the tests and some research in the [tests.pdf](https://github.com/lenferdetroud/finite-element-method/blob/main/tests.pdf). 
 
 ## Install
 Since this is a Windows console application, you can simply clone the repository directly into your Visual Studio environment or use `git clone https://github.com/lenferdetroud/finite-element-method.git`. The application has no interface.  
