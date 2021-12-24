@@ -31,7 +31,7 @@ This equation is set in some area **Ω** with boundary  <img src="https://github
 <img src="https://github.com/lenferdetroud/misc/blob/master/fem/12.png" width="60%">  
   
 Our goal is to find **u = u(x, y)** (i.e., its numerical approximation).
-First, we choose a random (trial) function that satisfies the boundary conditions and replace the function **u(x, y)** in the differential equation with it. Second, we calculate the [error](https://en.wikipedia.org/wiki/Residual_(numerical_analysis)) (the difference between the chosen and theoretical functions). Finally, we minimize the error.
+The first step is to find an arbitrary trial function which satisfies the given boundary conditions. Substituting it into the equation, we will calculate the [residual](https://en.wikipedia.org/wiki/Residual_(numerical_analysis)) (the difference between the chosen and theoretical functions) to estimate the accuracy of the approximation. Next, we need to find such a function among some set of functions that approximates the **u** in the best way, i.e. solve the problem of minimization of a [functional](https://en.wikipedia.org/wiki/Functional_(mathematics)). 
 
 ### Galerkin Method
 The best method for minimizing the error in our case is the [Galerkin method](https://en.wikipedia.org/wiki/Galerkin_method), which can be described by this equation:  
